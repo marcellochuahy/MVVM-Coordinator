@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// TODO
 class OutroViewController: UIViewController {
   
   lazy var label: UILabel = { return UILabel(frame: .zero) }()

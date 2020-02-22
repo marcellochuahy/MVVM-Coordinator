@@ -1,6 +1,6 @@
 //
 //  CelulaDaCentralDePagamentos.swift
-//  Example2-MVC-ViewCode
+//  Example of MVVM-C Pattern
 //
 //  Created by Marcello Chuahy on 17/02/20.
 //  Copyright © 2020 Applause Codes. All rights reserved.
@@ -11,12 +11,11 @@ import UIKit
 class DashboardTVCell: UITableViewCell {
   
   // MARK: - Properties
-  
   lazy var roundedView: UIView = { return UIView(frame: .zero) }()
   lazy var leftBarView: UIView = { return UIView(frame: .zero) }()
   lazy var stackView: UIStackView = { return UIStackView(frame: .zero) }()
-  lazy var beneficiarioLabel: UILabel = { return UILabel(frame: .zero) }()
-  lazy var valorAPagarLabel: UILabel = { return UILabel(frame: .zero) }()
+  lazy var beneficiaryLabel: UILabel = { return UILabel(frame: .zero) }()
+  lazy var monetaryValueLabel: UILabel = { return UILabel(frame: .zero) }()
   lazy var disclosureIndicatorImage: UIImageView = { return UIImageView(frame: .zero) }()
   
   // MARK: - Initialization
@@ -37,8 +36,8 @@ extension DashboardTVCell: ViewCodeProtocol {
   
   func buildViewHierarchy() {
     
-    stackView.addArrangedSubview(beneficiarioLabel)
-    stackView.addArrangedSubview(valorAPagarLabel)
+    stackView.addArrangedSubview(beneficiaryLabel)
+    stackView.addArrangedSubview(monetaryValueLabel)
     
     roundedView.addSubview(leftBarView)
     roundedView.addSubview(stackView)
@@ -53,8 +52,8 @@ extension DashboardTVCell: ViewCodeProtocol {
     roundedView.translatesAutoresizingMaskIntoConstraints = false
     leftBarView.translatesAutoresizingMaskIntoConstraints = false
     stackView.translatesAutoresizingMaskIntoConstraints = false
-    beneficiarioLabel.translatesAutoresizingMaskIntoConstraints = false
-    valorAPagarLabel.translatesAutoresizingMaskIntoConstraints = false
+    beneficiaryLabel.translatesAutoresizingMaskIntoConstraints = false
+    monetaryValueLabel.translatesAutoresizingMaskIntoConstraints = false
     disclosureIndicatorImage.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
@@ -87,8 +86,8 @@ extension DashboardTVCell: ViewCodeProtocol {
     // Cores
     contentView.backgroundColor = UIColor.CustomStyle.backgroundGray
     roundedView.backgroundColor = UIColor.CustomStyle.white
-    beneficiarioLabel.textColor = UIColor.CustomStyle.gray
-    valorAPagarLabel.textColor = UIColor.CustomStyle.darkGray
+    beneficiaryLabel.textColor = UIColor.CustomStyle.gray
+    monetaryValueLabel.textColor = UIColor.CustomStyle.darkGray
     
     // Stack view
     stackView.axis = NSLayoutConstraint.Axis.vertical
@@ -97,13 +96,13 @@ extension DashboardTVCell: ViewCodeProtocol {
     stackView.spacing = 3
     
     // Fonts
-    beneficiarioLabel.font = UIFont.CustomStyle.helveticaNeue_14
-    beneficiarioLabel.numberOfLines = 1
-    beneficiarioLabel.adjustsFontForContentSizeCategory = false
+    beneficiaryLabel.font = UIFont.CustomStyle.helveticaNeue_14
+    beneficiaryLabel.numberOfLines = 1
+    beneficiaryLabel.adjustsFontForContentSizeCategory = false
     
-    valorAPagarLabel.font = UIFont.CustomStyle.helveticaNeueBold_24
-    valorAPagarLabel.numberOfLines = 1
-    valorAPagarLabel.adjustsFontForContentSizeCategory = false
+    monetaryValueLabel.font = UIFont.CustomStyle.helveticaNeueBold_24
+    monetaryValueLabel.numberOfLines = 1
+    monetaryValueLabel.adjustsFontForContentSizeCategory = false
     
     // Outros
     roundedView.layer.cornerRadius = 4

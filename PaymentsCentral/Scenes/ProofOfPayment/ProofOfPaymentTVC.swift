@@ -1,6 +1,6 @@
 //
 //  ProofOfPaymentTVC.swift
-//  Example2-MVC-ViewCode
+//  Example of MVVM-C Pattern
 //
 //  Created by Marcello Chuahy on 16/02/20.
 //  Copyright © 2020 Applause Codes. All rights reserved.
@@ -50,9 +50,9 @@ class ProofOfPaymentTVC: UITableViewController {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CelulaDoComprovanteDePagamento
     
-    cell.valorAPagarLabel.text = "R$ \(monetaryValue ?? 0)"
-    cell.beneficiarioLabel.text = beneficiary
-    cell.beneficiarioLabel.numberOfLines = 0
+    cell.monetaryValueLabel.text = "R$ \(monetaryValue ?? 0)"
+    cell.beneficiaryLabel.text = beneficiary
+    cell.beneficiaryLabel.numberOfLines = 0
     
     return cell
     
@@ -63,14 +63,14 @@ class ProofOfPaymentTVC: UITableViewController {
 // MARK: - Constructor
 extension ProofOfPaymentTVC {
   
-  public class func instantiate(coordinator: ProofOfPaymentDelegate?, beneficiary: String, monetaryValue: Double) -> ProofOfPaymentTVC {
+  public class func instantiate(coordinator: ProofOfPaymentDelegate?, monetaryValue: Double, beneficiary: String) -> ProofOfPaymentTVC {
     
     let viewController = ProofOfPaymentTVC()
     
     viewController.title = "comprovante"
     viewController.coordinator = coordinator
-    viewController.beneficiary = beneficiary
     viewController.monetaryValue = monetaryValue
+    viewController.beneficiary = beneficiary
     
     return viewController
     

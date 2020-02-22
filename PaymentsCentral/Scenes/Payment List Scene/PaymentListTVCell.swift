@@ -1,6 +1,6 @@
 //
 //  CelulaDaListaDePagamentos.swift
-//  Example2-MVC-ViewCode
+//  Example of MVVM-C Pattern
 //
 //  Created by Marcello Chuahy on 16/02/20.
 //  Copyright © 2020 Applause Codes. All rights reserved.
@@ -11,8 +11,8 @@ import UIKit
 class PaymentListTVCell: UITableViewCell {
   
   // MARK: - Properties
-  lazy var beneficiarioLabel: UILabel = { return UILabel(frame: .zero) }()
-  lazy var valorAPagarLabel: UILabel = { return UILabel(frame: .zero) }()
+  lazy var beneficiaryLabel: UILabel = { return UILabel(frame: .zero) }()
+  lazy var monetaryValueLabel: UILabel = { return UILabel(frame: .zero) }()
   
   var tipoDePagamento: TypeOfPayment?
   
@@ -32,25 +32,25 @@ class PaymentListTVCell: UITableViewCell {
 extension PaymentListTVCell: ViewCodeProtocol {
   
   func buildViewHierarchy() {
-    contentView.addSubview(beneficiarioLabel)
-    contentView.addSubview(valorAPagarLabel)
+    contentView.addSubview(beneficiaryLabel)
+    contentView.addSubview(monetaryValueLabel)
   }
   
   func setupConstraints() {
     
-    beneficiarioLabel.translatesAutoresizingMaskIntoConstraints = false
-    valorAPagarLabel.translatesAutoresizingMaskIntoConstraints = false
+    beneficiaryLabel.translatesAutoresizingMaskIntoConstraints = false
+    monetaryValueLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       
-      beneficiarioLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 0),
-      beneficiarioLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor, constant: 0),
-      beneficiarioLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor, constant: 0),
+      beneficiaryLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor, constant: 0),
+      beneficiaryLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor, constant: 0),
+      beneficiaryLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor, constant: 0),
       
-      valorAPagarLabel.topAnchor.constraint(equalTo: beneficiarioLabel.bottomAnchor, constant: 8),
-      valorAPagarLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor, constant: 0),
-      valorAPagarLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor, constant: 0),
-      valorAPagarLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor, constant: 0)
+      monetaryValueLabel.topAnchor.constraint(equalTo: beneficiaryLabel.bottomAnchor, constant: 8),
+      monetaryValueLabel.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor, constant: 0),
+      monetaryValueLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor, constant: 0),
+      monetaryValueLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor, constant: 0)
       
     ])
     
@@ -58,13 +58,13 @@ extension PaymentListTVCell: ViewCodeProtocol {
   
   func setupComplementaryConfiguration() {
     
-    beneficiarioLabel.font = UIFont.CustomStyle.helveticaNeueBold_14
-    beneficiarioLabel.textColor = UIColor.CustomStyle.darkGray
-    beneficiarioLabel.numberOfLines = 0
-    beneficiarioLabel.adjustsFontForContentSizeCategory = true
+    beneficiaryLabel.font = UIFont.CustomStyle.helveticaNeueBold_14
+    beneficiaryLabel.textColor = UIColor.CustomStyle.darkGray
+    beneficiaryLabel.numberOfLines = 0
+    beneficiaryLabel.adjustsFontForContentSizeCategory = true
     
-    valorAPagarLabel.font = UIFont.CustomStyle.helveticaNeue_20
-    valorAPagarLabel.textColor = UIColor.CustomStyle.orange
+    monetaryValueLabel.font = UIFont.CustomStyle.helveticaNeue_20
+    monetaryValueLabel.textColor = UIColor.CustomStyle.orange
     
   }
   

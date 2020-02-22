@@ -1,6 +1,6 @@
 //
 //  CentralDePagamentos.swift
-//  Example2-MVC-ViewCode
+//  Example of MVVM-C Pattern
 //
 //  Created by Marcello Chuahy on 16/02/20.
 //  Copyright © 2020 Applause Codes. All rights reserved.
@@ -15,18 +15,10 @@ public protocol DashboardDelegate: class {
 }
 
 class DashboardTVC: UITableViewController {
-  
-  // ⚠️
+
   // MARK: Properties
   weak var coordinator: DashboardDelegate?
-  
-//  var pagamentosAVencerQtd: Int?
-//  var pagamentosAVencerTotalAPagar: Double?
-//  var pagamentosVencidosQtd: Int?
-//  var pagamentosVencidosTotalAPagar: Double?
-//  var pagamentosExcluidosQtd: Int?
-//  var pagamentosExcluidosTotalAPagar: Double?
-  
+
   var summaryPayments = SummaryPayments(quantityOfDuePayments: 0,
                                         totalMonetaryValueOfDuePayments: 0,
                                         quantityOfOverduePayments: 0,
@@ -51,39 +43,14 @@ class DashboardTVC: UITableViewController {
 // MARK: - Constructors
 extension DashboardTVC {
   
-  public class func instantiate(coordinator: DashboardDelegate?, summaryPayments: SummaryPayments
+  public class func instantiate(coordinator: DashboardDelegate?, summaryPayments: SummaryPayments) -> DashboardTVC {
     
-    
-    //    delegate: DashboardDelegate?,
-    //
-    //    pagamentosAVencerQtd: Int,
-    //    pagamentosAVencerTotalAPagar: Double,
-    //
-    //    pagamentosVencidosQtd: Int,
-    //    pagamentosVencidosTotalAPagar: Double,
-    //
-    //    pagamentosExcluidosQtd: Int,
-    //    pagamentosExcluidosTotalAPagar: Double
-  
-  ) -> DashboardTVC
-  {
     let viewController = DashboardTVC()
     
     viewController.coordinator = coordinator
     viewController.summaryPayments = summaryPayments
-    
-
-    
-    
-    //    viewController.coordinator = delegate
-    //    viewController.pagamentosAVencerQtd = pagamentosAVencerQtd
-    //    viewController.pagamentosAVencerTotalAPagar = pagamentosAVencerTotalAPagar
-    //    viewController.pagamentosVencidosQtd = pagamentosVencidosQtd
-    //    viewController.pagamentosVencidosTotalAPagar = pagamentosVencidosTotalAPagar
-    //    viewController.pagamentosExcluidosQtd = pagamentosExcluidosQtd
-    //    viewController.pagamentosExcluidosTotalAPagar = pagamentosExcluidosTotalAPagar
-
     viewController.title = "central de pagamentos"
+    
     return viewController
   }
   
@@ -123,8 +90,8 @@ extension DashboardTVC {
           valorTotal: summaryPayments.totalMonetaryValueOfDuePayments ?? 0
         )
         
-        cell.beneficiarioLabel.attributedText = viewModel.quantidadeAttributedString
-        cell.valorAPagarLabel.attributedText = viewModel.valorAttributedString
+        cell.beneficiaryLabel.attributedText = viewModel.quantidadeAttributedString
+        cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
         cell.leftBarView.backgroundColor = UIColor.CustomStyle.yellow
         
         return cell
@@ -137,8 +104,8 @@ extension DashboardTVC {
           valorTotal: summaryPayments.totalMonetaryValueOfOverduePayments ?? 0
         )
         
-        cell.beneficiarioLabel.attributedText = viewModel.quantidadeAttributedString
-        cell.valorAPagarLabel.attributedText = viewModel.valorAttributedString
+        cell.beneficiaryLabel.attributedText = viewModel.quantidadeAttributedString
+        cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
         cell.leftBarView.backgroundColor = UIColor.CustomStyle.purple
         
         return cell
@@ -151,8 +118,8 @@ extension DashboardTVC {
           valorTotal: summaryPayments.totalMonetaryValueOfExcludedPayments ?? 0
         )
         
-        cell.beneficiarioLabel.attributedText = viewModel.quantidadeAttributedString
-        cell.valorAPagarLabel.attributedText = viewModel.valorAttributedString
+        cell.beneficiaryLabel.attributedText = viewModel.quantidadeAttributedString
+        cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
         cell.leftBarView.backgroundColor = UIColor.CustomStyle.darkRed
         
         return cell
@@ -180,6 +147,7 @@ extension DashboardTVC {
       }
       
     default: fatalError("Unknown section")
+      
     }
 
   }

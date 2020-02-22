@@ -1,6 +1,6 @@
 //
 //  ListaDePagamentos.swift
-//  Example2-MVC-ViewCode
+//  Example of MVVM-C Pattern
 //
 //  Created by Marcello Chuahy on 16/02/20.
 //  Copyright © 2020 Applause Codes. All rights reserved.
@@ -81,9 +81,9 @@ extension PaymentListTVC {
     guard let day      = paymentsDataSource?[indexPath.section]?.keys.first,
           let payments = paymentsDataSource?[indexPath.section]?[day] else { return cell }
 
-    cell.beneficiarioLabel.numberOfLines = 0
-    cell.beneficiarioLabel.text          = payments[indexPath.row].beneficiary
-    cell.valorAPagarLabel.text           = "\(payments[indexPath.row].monetaryValue)"
+    cell.beneficiaryLabel.numberOfLines = 0
+    cell.beneficiaryLabel.text          = payments[indexPath.row].beneficiary
+    cell.monetaryValueLabel.text           = "\(payments[indexPath.row].monetaryValue)"
     cell.accessoryType                   = UITableViewCell.AccessoryType.disclosureIndicator
     
     return cell

@@ -1,6 +1,6 @@
 //
 //  UIFontExtension.swift
-//  Example2-MVC-ViewCode
+//  Example of MVVM-C Pattern
 //
 //  Created by Marcello Chuahy on 18/02/20.
 //  Copyright © 2020 Applause Codes. All rights reserved.

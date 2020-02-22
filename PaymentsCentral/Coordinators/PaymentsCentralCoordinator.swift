@@ -1,6 +1,6 @@
 //
 //  CoordinatorTab_1.swift
-//  Example4-MVVM-to-MVVMC
+//  Example of MVVM-C Pattern
 //
 //  Created by Marcello Chuahy on 18/02/20.
 //  Copyright © 2020 Applause Codes. All rights reserved.
@@ -24,15 +24,15 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
                                         totalMonetaryValueOfExcludedPayments: 0)
 
   // MARK: - Instance Properties - ViewControllers
-  private lazy var beneficiary       = ""
-  private lazy var monetaryValue     = 0.00
+  // ==============================================================================================================================================
   private lazy var dashboardTVC      = DashboardTVC.instantiate(coordinator: self, summaryPayments: summaryPayments)
   private lazy var paymentListTVCs   = [
     PaymentListTVC.instantiate(coordinator: self, title: "pagamentos " + TypeOfPayment.duePayment.rawValue,      paymentsDataSource: paymentsGroupedByType.duePayment),
     PaymentListTVC.instantiate(coordinator: self, title: "pagamentos " + TypeOfPayment.overduePayment.rawValue,  paymentsDataSource: paymentsGroupedByType.overduePayment),
     PaymentListTVC.instantiate(coordinator: self, title: "pagamentos " + TypeOfPayment.excludedPayment.rawValue, paymentsDataSource: paymentsGroupedByType.excludedPayment)
   ]
-  private lazy var proofOfPaymentTVC = ProofOfPaymentTVC.instantiate(coordinator: self, beneficiary: beneficiary, monetaryValue: monetaryValue)
+  private lazy var proofOfPaymentTVC = ProofOfPaymentTVC()
+  // ==============================================================================================================================================
 
   // MARK: - Initializers
   init(navigationController: UINavigationController) {
@@ -43,6 +43,18 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
   func start() {
     setupNavigationController()
     loadData()
+  }
+  
+  func childDidFinish(_ child: Coordinator?) {
+    for (index, coordinator) in childCoordinators.enumerated() {
+      if coordinator === child {
+        childCoordinators.remove(at: index)
+        print("After childDidFinish => childCoordinators: \(childCoordinators)")
+        break
+      } else {
+        print("After childDidFinish => there nothing to remove")
+      }
+    }
   }
   
   func setupNavigationController() {
@@ -114,25 +126,30 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
 }
 
 extension PaymentsCentralCoordinator: DashboardDelegate {
-  func startDuePaymentsNavigation()      { navigationController.pushViewController(paymentListTVCs[0], animated: true) }
-  func startOverduePaymentsNavigation()  { navigationController.pushViewController(paymentListTVCs[1], animated: true) }
-  func startExcludedPaymentsNavigation() { navigationController.pushViewController(paymentListTVCs[2], animated: true) }
+  func startDuePaymentsNavigation()      {
+    navigationController.pushViewController(paymentListTVCs[0], animated: true)
+    print("After DashboardDelegate => childCoordinators: \(childCoordinators)")
+  }
+  func startOverduePaymentsNavigation()  {
+    navigationController.pushViewController(paymentListTVCs[1], animated: true)
+    print("After DashboardDelegate => childCoordinators: \(childCoordinators)")
+  }
+  func startExcludedPaymentsNavigation() {
+    navigationController.pushViewController(paymentListTVCs[2], animated: true)
+    print("After DashboardDelegate => childCoordinators: \(childCoordinators)")
+  }
 }
 
 extension PaymentsCentralCoordinator: PaymentListDelegate {
+  
   func pay(monetaryValue: Double, forBeneficiary beneficiary: String) {
     
-    self.monetaryValue = monetaryValue
-    self.beneficiary   = beneficiary
-    
-
-    navigationController.pushViewController(proofOfPaymentTVC, animated: true)
+    let nextViewController = ProofOfPaymentTVC.instantiate(coordinator: self, monetaryValue: monetaryValue, beneficiary: beneficiary)
+    navigationController.pushViewController(nextViewController, animated: true)
+    print("After PaymentListDelegate => childCoordinators: \(childCoordinators)")
     
   }
   
-  
-  
- 
 }
 
 extension PaymentsCentralCoordinator: ProofOfPaymentDelegate {
@@ -151,14 +168,16 @@ extension PaymentsCentralCoordinator: UINavigationControllerDelegate {
     
     if navigationController.viewControllers.contains(fromViewController) { return }
     
-    //        if let viewController1A = fromViewController as? ViewController1A {
-    //            childDidFinish(viewController1A.coordinator as? Coordinator)
-    //        }
+    if let paymentList = fromViewController as? PaymentListTVC {
+      print("finish child coordinator of PaymentListTVC")
+      childDidFinish(paymentList.coordinator as? Coordinator)
+    }
     
-    //        if let viewController2A = fromViewController as? ViewController2A {
-    //            childDidFinish(viewController2A.coordinator)
-    //        }
-    
+    if let proofOfPayment = fromViewController as? ProofOfPaymentTVC {
+      print("finish child coordinator of ProofOfPaymentTVC")
+      childDidFinish(proofOfPayment.coordinator as? Coordinator)
+    }
+
   }
   
 }

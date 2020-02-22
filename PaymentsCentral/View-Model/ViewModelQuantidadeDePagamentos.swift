@@ -1,13 +1,13 @@
 //
 //  ViewModelQuantidadeDePagamentos.swift
-//  Example3-MVC-to-MVVM
+//  Example of MVVM-C Pattern
 //
 //  Created by Marcello Chuahy on 18/02/20.
 //  Copyright © 2020 Applause Codes. All rights reserved.
 //
 
 import UIKit
-
+// TODO
 class ViewModelQuantidadeDePagamentos {
   
   // MARK: Properties
