@@ -79,13 +79,13 @@
     
   ],
   
-  "quantityOfDuePayments": 21,
+  "numberOfDuePayments": 21,
   "totalMonetaryValueOfDuePayments": 2100,
   
-  "quantityOfOverduePayments": 21,
+  "numberOfOverduePayments": 21,
   "totalMonetaryValueOfOverduePayments": 2100,
   
-  "quantityOfExcludedPayments": 21,
+  "numberOfExcludedPayments": 21,
   "totalMonetaryValueOfExcludedPayments": 2100,
   
   

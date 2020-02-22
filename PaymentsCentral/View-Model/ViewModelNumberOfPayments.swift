@@ -1,5 +1,5 @@
 //
-//  ViewModelQuantidadeDePagamentos.swift
+//  ViewModelNumberOfPayments.swift
 //  Example of MVVM-C Pattern
 //
 //  Created by Marcello Chuahy on 18/02/20.
@@ -8,18 +8,18 @@
 
 import UIKit
 // TODO
-class ViewModelQuantidadeDePagamentos {
+class ViewModelNumberOfPayments {
   
   // MARK: Properties
-  let tipoDePagamento: TypeOfPayment
-  let quantidadeTotal: Int
-  let valorTotal: Double
+  let TypeOfPayment: TypeOfPayment
+  let numberOfPayments: Int
+  let totalMonetaryValue: Double
   
   // MARK: Initializers
-  public init(tipoDePagamento: TypeOfPayment, quantidadeTotal: Int, valorTotal: Double) {
-    self.tipoDePagamento = tipoDePagamento
-    self.quantidadeTotal = quantidadeTotal
-    self.valorTotal = valorTotal
+  public init(TypeOfPayment: TypeOfPayment, numberOfPayments: Int, totalMonetaryValue: Double) {
+    self.TypeOfPayment = TypeOfPayment
+    self.numberOfPayments = numberOfPayments
+    self.totalMonetaryValue = totalMonetaryValue
   }
   
   // MARK: Computed properties
@@ -37,11 +37,11 @@ class ViewModelQuantidadeDePagamentos {
   }
   
   var quantidadeAttributedString: NSMutableAttributedString! {
-    return makeAttributedStringToPaymentLabel(withNumberOfPayments: quantidadeTotal, andTipoDePagamento: tipoDePagamento)
+    return makeAttributedStringToPaymentLabel(withNumberOfPayments: numberOfPayments, andTipoDePagamento: TypeOfPayment)
   }
   
   var valorAttributedString: NSMutableAttributedString! {
-    return convertDoubleToStringAsRealBrasileiro(valorTotal)
+    return convertDoubleToStringAsRealBrasileiro(totalMonetaryValue)
   }
   
   func makeAttributedStringToPaymentLabel(withNumberOfPayments: Int, andTipoDePagamento: TypeOfPayment) -> NSMutableAttributedString {
@@ -50,9 +50,9 @@ class ViewModelQuantidadeDePagamentos {
     let attributes_gray_normal: [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.gray, .font: normal]
     let attributes_gray_bold:   [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.gray, .font: bold]
     
-    let subString1 = NSMutableAttributedString(string: "\(quantidadeTotal) ", attributes: attributes_black_bold)
+    let subString1 = NSMutableAttributedString(string: "\(numberOfPayments) ", attributes: attributes_black_bold)
     let subString2 = NSMutableAttributedString(string: "pagamentos ",                attributes: attributes_gray_normal)
-    let subString3 = NSMutableAttributedString(string: tipoDePagamento.rawValue,     attributes: attributes_gray_bold)
+    let subString3 = NSMutableAttributedString(string: TypeOfPayment.rawValue,     attributes: attributes_gray_bold)
     
     subString1.append(subString2)
     subString1.append(subString3)

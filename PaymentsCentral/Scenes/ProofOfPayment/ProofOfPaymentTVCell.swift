@@ -8,16 +8,16 @@
 
 import UIKit
 // TODO
-class CelulaDoComprovanteDePagamento: UITableViewCell {
+class ProofOfPaymentTVCell: UITableViewCell {
   
   // MARK: - Properties
   
   lazy var boletoBancarioLabel: UILabel      = { return UILabel(frame: .zero) }()
-  lazy var monetaryValueLabel: UILabel         = { return UILabel(frame: .zero) }() // recebe dado da tela anterior
+  lazy var monetaryValueLabel: UILabel       = { return UILabel(frame: .zero) }()
   lazy var divider: UIView                   = { return UIView(frame: .zero) }()
   lazy var dadosDoBeneficiarioLabel: UILabel = { return UILabel(frame: .zero) }()
   lazy var nomeLabel: UILabel                = { return UILabel(frame: .zero) }()
-  lazy var beneficiaryLabel: UILabel        = { return UILabel(frame: .zero) }() // recebe dado da tela anterior
+  lazy var beneficiaryLabel: UILabel         = { return UILabel(frame: .zero) }()
   
   // MARK: - Initialization
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -32,25 +32,25 @@ class CelulaDoComprovanteDePagamento: UITableViewCell {
   
 }
 
-extension CelulaDoComprovanteDePagamento: ViewCodeProtocol {
+extension ProofOfPaymentTVCell: ViewCodeProtocol {
   
   func buildViewHierarchy() {
     contentView.addSubview(boletoBancarioLabel)
-    contentView.addSubview(monetaryValueLabel) // recebe dado da tela
+    contentView.addSubview(monetaryValueLabel)
     contentView.addSubview(divider)
     contentView.addSubview(dadosDoBeneficiarioLabel)
     contentView.addSubview(nomeLabel)
-    contentView.addSubview(beneficiaryLabel) // recebe dado da tela anterior
+    contentView.addSubview(beneficiaryLabel)
   }
   
   func setupConstraints() {
     
     boletoBancarioLabel.translatesAutoresizingMaskIntoConstraints = false
-    monetaryValueLabel.translatesAutoresizingMaskIntoConstraints = false // recebe dado da tela anterior
+    monetaryValueLabel.translatesAutoresizingMaskIntoConstraints = false
     divider.translatesAutoresizingMaskIntoConstraints = false
     dadosDoBeneficiarioLabel.translatesAutoresizingMaskIntoConstraints = false
     nomeLabel.translatesAutoresizingMaskIntoConstraints = false
-    beneficiaryLabel.translatesAutoresizingMaskIntoConstraints = false // recebe dado da tela anterior
+    beneficiaryLabel.translatesAutoresizingMaskIntoConstraints = false
     
     NSLayoutConstraint.activate([
       
@@ -98,29 +98,31 @@ extension CelulaDoComprovanteDePagamento: ViewCodeProtocol {
     nomeLabel.text = "nome"
     
     boletoBancarioLabel.font      = UIFont.CustomStyle.helveticaNeueBold_18
-    monetaryValueLabel.font         = UIFont.CustomStyle.helveticaNeue_20
+    monetaryValueLabel.font       = UIFont.CustomStyle.helveticaNeue_20
     dadosDoBeneficiarioLabel.font = UIFont.CustomStyle.helveticaNeueBold_14
     nomeLabel.font                = UIFont.CustomStyle.helveticaNeue_14
-    beneficiaryLabel.font        = UIFont.CustomStyle.helveticaNeue_20
+    beneficiaryLabel.font         = UIFont.CustomStyle.helveticaNeue_20
     
     boletoBancarioLabel.textColor      = UIColor.CustomStyle.darkGray
-    monetaryValueLabel.textColor         = UIColor.CustomStyle.orange
+    monetaryValueLabel.textColor       = UIColor.CustomStyle.orange
     dadosDoBeneficiarioLabel.textColor = UIColor.CustomStyle.darkGray
     nomeLabel.textColor                = UIColor.CustomStyle.darkGray
-    beneficiaryLabel.textColor        = UIColor.CustomStyle.darkGray
+    beneficiaryLabel.textColor         = UIColor.CustomStyle.darkGray
     
     boletoBancarioLabel.numberOfLines = 2
     
     divider.backgroundColor = UIColor.CustomStyle.lightGray
     
-    setSelfSizingCellsWithDynamicType()
+    // TODO
+    //setSelfSizingCellsWithDynamicType()
     
   }
   
-  func setSelfSizingCellsWithDynamicType() {
-    beneficiaryLabel.numberOfLines = 0
-    beneficiaryLabel.adjustsFontForContentSizeCategory = true
-  }
+  // TODO
+  //  func setSelfSizingCellsWithDynamicType() {
+  //    beneficiaryLabel.numberOfLines = 0
+  //    beneficiaryLabel.adjustsFontForContentSizeCategory = true
+  //  }
   
   
 }

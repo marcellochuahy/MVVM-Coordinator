@@ -28,9 +28,13 @@ class ProofOfPaymentTVC: UITableViewController {
   
   // MARK: - Methods
   func setupTableView() {
-    tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 347
-    tableView.register(CelulaDoComprovanteDePagamento.self, forCellReuseIdentifier: "cell")
+    
+    /// ⚠️ uncomment to enable self sizing cell
+    // tableView.rowHeight = UITableView.automaticDimension
+    // tableView.estimatedRowHeight = 347
+    
+    tableView.register(ProofOfPaymentTVCell.self, forCellReuseIdentifier: "cell")
+    
   }
   
   @objc func dimissButtonWasPressed() {
@@ -48,11 +52,14 @@ class ProofOfPaymentTVC: UITableViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CelulaDoComprovanteDePagamento
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProofOfPaymentTVCell
     
     cell.monetaryValueLabel.text = "R$ \(monetaryValue ?? 0)"
     cell.beneficiaryLabel.text = beneficiary
-    cell.beneficiaryLabel.numberOfLines = 0
+    
+    /// ⚠️ uncomment to enable self sizing cell
+    // cell.beneficiaryLabel.numberOfLines = 0
+    //cell.beneficiaryLabel.adjustsFontForContentSizeCategory = true
     
     return cell
     

@@ -15,15 +15,15 @@ public protocol DashboardDelegate: class {
 }
 
 class DashboardTVC: UITableViewController {
-
-  // MARK: Properties
+  
+  // MARK: - Properties
   weak var coordinator: DashboardDelegate?
 
-  var summaryPayments = SummaryPayments(quantityOfDuePayments: 0,
+  var summaryPayments = SummaryPayments(numberOfDuePayments: 0,
                                         totalMonetaryValueOfDuePayments: 0,
-                                        quantityOfOverduePayments: 0,
+                                        numberOfOverduePayments: 0,
                                         totalMonetaryValueOfOverduePayments: 0,
-                                        quantityOfExcludedPayments: 0,
+                                        numberOfExcludedPayments: 0,
                                         totalMonetaryValueOfExcludedPayments: 0)
   
   // MARK: - Life cycle
@@ -84,42 +84,54 @@ extension DashboardTVC {
 
       case 0:
         
-        let viewModel = ViewModelQuantidadeDePagamentos(
-          tipoDePagamento: .duePayment,
-          quantidadeTotal: summaryPayments.quantityOfDuePayments ?? 0,
-          valorTotal: summaryPayments.totalMonetaryValueOfDuePayments ?? 0
-        )
+        let numberOfPayments   = summaryPayments.numberOfDuePayments ?? 0
+        let totalMonetaryValue = summaryPayments.totalMonetaryValueOfDuePayments ?? 0
         
-        cell.beneficiaryLabel.attributedText = viewModel.quantidadeAttributedString
-        cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
+        /// Before MVVM:
+        cell.numberOfPayments.text   = String(numberOfPayments)
+        cell.monetaryValueLabel.text = String(totalMonetaryValue)
+        
+        /// After MVVM:
+        // let viewModel = ViewModelNumberOfPayments(TypeOfPayment: .duePayment, numberOfPayments: numberOfPayments, totalMonetaryValue: totalMonetaryValue)
+        // cell.numberOfPayments.attributedText   = viewModel.quantidadeAttributedString
+        // cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
+        
         cell.leftBarView.backgroundColor = UIColor.CustomStyle.yellow
         
         return cell
         
       case 1:
 
-        let viewModel = ViewModelQuantidadeDePagamentos(
-          tipoDePagamento: .overduePayment,
-          quantidadeTotal: summaryPayments.quantityOfOverduePayments ?? 0,
-          valorTotal: summaryPayments.totalMonetaryValueOfOverduePayments ?? 0
-        )
+        let numberOfPayments   = summaryPayments.numberOfOverduePayments ?? 0
+        let totalMonetaryValue = summaryPayments.totalMonetaryValueOfOverduePayments ?? 0
+
+        /// Before MVVM:
+        cell.numberOfPayments.text   = String(numberOfPayments)
+        cell.monetaryValueLabel.text = String(totalMonetaryValue)
         
-        cell.beneficiaryLabel.attributedText = viewModel.quantidadeAttributedString
-        cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
+        /// After MVVM:
+        // let viewModel = ViewModelNumberOfPayments(TypeOfPayment: .overduePayment, numberOfPayments: numberOfPayments, totalMonetaryValue: totalMonetaryValue)
+        // cell.numberOfPayments.attributedText   = viewModel.quantidadeAttributedString
+        // cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
+        
         cell.leftBarView.backgroundColor = UIColor.CustomStyle.purple
         
         return cell
         
       case 2:
         
-        let viewModel = ViewModelQuantidadeDePagamentos(
-          tipoDePagamento: .excludedPayment,
-          quantidadeTotal: summaryPayments.quantityOfExcludedPayments ?? 0,
-          valorTotal: summaryPayments.totalMonetaryValueOfExcludedPayments ?? 0
-        )
+        let numberOfPayments   = summaryPayments.numberOfExcludedPayments ?? 0
+        let totalMonetaryValue = summaryPayments.totalMonetaryValueOfExcludedPayments ?? 0
         
-        cell.beneficiaryLabel.attributedText = viewModel.quantidadeAttributedString
-        cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
+        /// Before MVVM:
+        cell.numberOfPayments.text   = String(numberOfPayments)
+        cell.monetaryValueLabel.text = String(totalMonetaryValue)
+        
+        /// After MVVM:
+        // let viewModel = ViewModelNumberOfPayments(TypeOfPayment: .excludedPayment, numberOfPayments: numberOfPayments, totalMonetaryValue: totalMonetaryValue)
+        // cell.numberOfPayments.attributedText   = viewModel.quantidadeAttributedString
+        // cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
+        
         cell.leftBarView.backgroundColor = UIColor.CustomStyle.darkRed
         
         return cell

@@ -16,7 +16,7 @@ class PaymentListTVC: UITableViewController {
   
   // MARK: - Properties
   weak var coordinator: PaymentListDelegate?
-  var tipoDePagamento: TypeOfPayment?
+  var TypeOfPayment: TypeOfPayment?
   var paymentsDataSource: [DayAndPayments]?
   
   // MARK: - Life cycle

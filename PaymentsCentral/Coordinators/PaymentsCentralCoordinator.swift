@@ -16,11 +16,11 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
   
     // MARK: - Instance Properties
   private var paymentsGroupedByType = PaymentsGroupedByType()
-  private var summaryPayments = SummaryPayments(quantityOfDuePayments: 0,
+  private var summaryPayments = SummaryPayments(numberOfDuePayments: 0,
                                         totalMonetaryValueOfDuePayments: 0,
-                                        quantityOfOverduePayments: 0,
+                                        numberOfOverduePayments: 0,
                                         totalMonetaryValueOfOverduePayments: 0,
-                                        quantityOfExcludedPayments: 0,
+                                        numberOfExcludedPayments: 0,
                                         totalMonetaryValueOfExcludedPayments: 0)
 
   // MARK: - Instance Properties - ViewControllers
@@ -85,11 +85,11 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
             self.paymentsGroupedByType.overduePayment  = json.overduePayment
             self.paymentsGroupedByType.excludedPayment = json.excludedPayment
             
-            self.summaryPayments.quantityOfDuePayments                = json.quantityOfDuePayments
+            self.summaryPayments.numberOfDuePayments                = json.numberOfDuePayments
             self.summaryPayments.totalMonetaryValueOfDuePayments      = json.totalMonetaryValueOfDuePayments
-            self.summaryPayments.quantityOfOverduePayments            = json.quantityOfOverduePayments
+            self.summaryPayments.numberOfOverduePayments            = json.numberOfOverduePayments
             self.summaryPayments.totalMonetaryValueOfOverduePayments  = json.totalMonetaryValueOfOverduePayments
-            self.summaryPayments.quantityOfExcludedPayments           = json.quantityOfExcludedPayments
+            self.summaryPayments.numberOfExcludedPayments           = json.numberOfExcludedPayments
             self.summaryPayments.totalMonetaryValueOfExcludedPayments = json.totalMonetaryValueOfExcludedPayments
             
             

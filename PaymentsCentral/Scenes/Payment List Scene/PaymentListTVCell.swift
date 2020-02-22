@@ -14,7 +14,7 @@ class PaymentListTVCell: UITableViewCell {
   lazy var beneficiaryLabel: UILabel = { return UILabel(frame: .zero) }()
   lazy var monetaryValueLabel: UILabel = { return UILabel(frame: .zero) }()
   
-  var tipoDePagamento: TypeOfPayment?
+  var TypeOfPayment: TypeOfPayment?
   
   // MARK: - Initialization
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

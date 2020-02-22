@@ -11,11 +11,12 @@ import UIKit
 class DashboardTVCell: UITableViewCell {
   
   // MARK: - Properties
-  lazy var roundedView: UIView = { return UIView(frame: .zero) }()
-  lazy var leftBarView: UIView = { return UIView(frame: .zero) }()
+  lazy var roundedView: UIView    = { return UIView(frame: .zero) }()
+  lazy var leftBarView: UIView    = { return UIView(frame: .zero) }()
   lazy var stackView: UIStackView = { return UIStackView(frame: .zero) }()
-  lazy var beneficiaryLabel: UILabel = { return UILabel(frame: .zero) }()
-  lazy var monetaryValueLabel: UILabel = { return UILabel(frame: .zero) }()
+  
+  lazy var numberOfPayments: UILabel             = { return UILabel(frame: .zero) }()
+  lazy var monetaryValueLabel: UILabel           = { return UILabel(frame: .zero) }()
   lazy var disclosureIndicatorImage: UIImageView = { return UIImageView(frame: .zero) }()
   
   // MARK: - Initialization
@@ -33,10 +34,9 @@ class DashboardTVCell: UITableViewCell {
 
 extension DashboardTVCell: ViewCodeProtocol {
   
-  
   func buildViewHierarchy() {
     
-    stackView.addArrangedSubview(beneficiaryLabel)
+    stackView.addArrangedSubview(numberOfPayments)
     stackView.addArrangedSubview(monetaryValueLabel)
     
     roundedView.addSubview(leftBarView)
@@ -52,7 +52,7 @@ extension DashboardTVCell: ViewCodeProtocol {
     roundedView.translatesAutoresizingMaskIntoConstraints = false
     leftBarView.translatesAutoresizingMaskIntoConstraints = false
     stackView.translatesAutoresizingMaskIntoConstraints = false
-    beneficiaryLabel.translatesAutoresizingMaskIntoConstraints = false
+    numberOfPayments.translatesAutoresizingMaskIntoConstraints = false
     monetaryValueLabel.translatesAutoresizingMaskIntoConstraints = false
     disclosureIndicatorImage.translatesAutoresizingMaskIntoConstraints = false
     
@@ -86,7 +86,7 @@ extension DashboardTVCell: ViewCodeProtocol {
     // Cores
     contentView.backgroundColor = UIColor.CustomStyle.backgroundGray
     roundedView.backgroundColor = UIColor.CustomStyle.white
-    beneficiaryLabel.textColor = UIColor.CustomStyle.gray
+    numberOfPayments.textColor = UIColor.CustomStyle.gray
     monetaryValueLabel.textColor = UIColor.CustomStyle.darkGray
     
     // Stack view
@@ -96,9 +96,9 @@ extension DashboardTVCell: ViewCodeProtocol {
     stackView.spacing = 3
     
     // Fonts
-    beneficiaryLabel.font = UIFont.CustomStyle.helveticaNeue_14
-    beneficiaryLabel.numberOfLines = 1
-    beneficiaryLabel.adjustsFontForContentSizeCategory = false
+    numberOfPayments.font = UIFont.CustomStyle.helveticaNeue_14
+    numberOfPayments.numberOfLines = 1
+    numberOfPayments.adjustsFontForContentSizeCategory = false
     
     monetaryValueLabel.font = UIFont.CustomStyle.helveticaNeueBold_24
     monetaryValueLabel.numberOfLines = 1
@@ -111,7 +111,6 @@ extension DashboardTVCell: ViewCodeProtocol {
     disclosureIndicatorImage.image = UIImage(named: "disclosureIndicatorImage")
     
   }
-  
   
 }
 

@@ -26,9 +26,9 @@
 		5F6F333623FC457800C73418 /* PaymentListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333523FC457800C73418 /* PaymentListTVC.swift */; };
 		5F6F333823FC45A400C73418 /* PaymentListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333723FC45A400C73418 /* PaymentListTVCell.swift */; };
 		5F6F333A23FC45C000C73418 /* ProofOfPaymentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333923FC45C000C73418 /* ProofOfPaymentTVC.swift */; };
-		5F6F333C23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333B23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift */; };
+		5F6F333C23FC45D700C73418 /* ProofOfPaymentTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333B23FC45D700C73418 /* ProofOfPaymentTVCell.swift */; };
 		5F6F333F23FC461E00C73418 /* OutroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333E23FC461E00C73418 /* OutroViewController.swift */; };
-		5F6F334123FC463900C73418 /* ViewModelQuantidadeDePagamentos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334023FC463900C73418 /* ViewModelQuantidadeDePagamentos.swift */; };
+		5F6F334123FC463900C73418 /* ViewModelNumberOfPayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334023FC463900C73418 /* ViewModelNumberOfPayments.swift */; };
 		5F6F334323FC466500C73418 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334223FC466500C73418 /* ViewCodeProtocol.swift */; };
 		5F6F334623FC488900C73418 /* PaymentsCentralCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334523FC488900C73418 /* PaymentsCentralCoordinator.swift */; };
 		5F6F334A23FC48A400C73418 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334923FC48A400C73418 /* Coordinator.swift */; };
@@ -56,9 +56,9 @@
 		5F6F333523FC457800C73418 /* PaymentListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListTVC.swift; sourceTree = "<group>"; };
 		5F6F333723FC45A400C73418 /* PaymentListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListTVCell.swift; sourceTree = "<group>"; };
 		5F6F333923FC45C000C73418 /* ProofOfPaymentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProofOfPaymentTVC.swift; sourceTree = "<group>"; };
-		5F6F333B23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelulaDoComprovanteDePagamento.swift; sourceTree = "<group>"; };
+		5F6F333B23FC45D700C73418 /* ProofOfPaymentTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProofOfPaymentTVCell.swift; sourceTree = "<group>"; };
 		5F6F333E23FC461E00C73418 /* OutroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroViewController.swift; sourceTree = "<group>"; };
-		5F6F334023FC463900C73418 /* ViewModelQuantidadeDePagamentos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelQuantidadeDePagamentos.swift; sourceTree = "<group>"; };
+		5F6F334023FC463900C73418 /* ViewModelNumberOfPayments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelNumberOfPayments.swift; sourceTree = "<group>"; };
 		5F6F334223FC466500C73418 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		5F6F334523FC488900C73418 /* PaymentsCentralCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsCentralCoordinator.swift; sourceTree = "<group>"; };
 		5F6F334923FC48A400C73418 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		5F6F330523FC3BCE00C73418 /* View-Model */ = {
 			isa = PBXGroup;
 			children = (
-				5F6F334023FC463900C73418 /* ViewModelQuantidadeDePagamentos.swift */,
+				5F6F334023FC463900C73418 /* ViewModelNumberOfPayments.swift */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				5F6F333923FC45C000C73418 /* ProofOfPaymentTVC.swift */,
-				5F6F333B23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift */,
+				5F6F333B23FC45D700C73418 /* ProofOfPaymentTVCell.swift */,
 			);
 			path = ProofOfPayment;
 			sourceTree = "<group>";
@@ -314,9 +314,9 @@
 				5F6F333023FC451B00C73418 /* DashboardTVC.swift in Sources */,
 				5F6F334623FC488900C73418 /* PaymentsCentralCoordinator.swift in Sources */,
 				5F65E3F62401516F00C3F923 /* DayAndPayments.swift in Sources */,
-				5F6F333C23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift in Sources */,
+				5F6F333C23FC45D700C73418 /* ProofOfPaymentTVCell.swift in Sources */,
 				5F65E3ED24014D3200C3F923 /* SummaryPayments.swift in Sources */,
-				5F6F334123FC463900C73418 /* ViewModelQuantidadeDePagamentos.swift in Sources */,
+				5F6F334123FC463900C73418 /* ViewModelNumberOfPayments.swift in Sources */,
 				5F6F333223FC453A00C73418 /* DashboardTVCell.swift in Sources */,
 				5F6F333F23FC461E00C73418 /* OutroViewController.swift in Sources */,
 				5F6F331D23FC43B700C73418 /* UIFontExtension.swift in Sources */,

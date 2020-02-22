@@ -9,15 +9,15 @@
 struct SummaryPayments {
   
   /// Due Payments
-  var quantityOfDuePayments: Int?
+  var numberOfDuePayments: Int?
   var totalMonetaryValueOfDuePayments: Double?
   
   /// Overdue Payments
-  var quantityOfOverduePayments: Int?
+  var numberOfOverduePayments: Int?
   var totalMonetaryValueOfOverduePayments: Double?
   
   /// Excluded Payments
-  var quantityOfExcludedPayments: Int?
+  var numberOfExcludedPayments: Int?
   var totalMonetaryValueOfExcludedPayments: Double?
   
 }
