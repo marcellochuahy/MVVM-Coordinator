@@ -8,13 +8,16 @@
 
 struct SummaryPayments {
   
+  /// Due Payments
   var quantityOfDuePayments: Int?
-  var totalMonetaryValueOfDuePayment: Double?
+  var totalMonetaryValueOfDuePayments: Double?
   
+  /// Overdue Payments
   var quantityOfOverduePayments: Int?
-  var totalMonetaryValueOfOverduePayment: Double?
+  var totalMonetaryValueOfOverduePayments: Double?
   
+  /// Excluded Payments
   var quantityOfExcludedPayments: Int?
-  var totalMonetaryValueOfExcludedPayment: Double?
+  var totalMonetaryValueOfExcludedPayments: Double?
   
 }

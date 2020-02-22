@@ -13,13 +13,13 @@ struct WebServiceDecoder: Decodable {
   let excludedPayment: [DayAndPayments]
   
   let quantityOfDuePayments: Int
-  let totalMonetaryValueOfDuePayment: Double
+  let totalMonetaryValueOfDuePayments: Double
   
   let quantityOfOverduePayments: Int
-  let totalMonetaryValueOfOverduePayment: Double
+  let totalMonetaryValueOfOverduePayments: Double
   
   let quantityOfExcludedPayments: Int
-  let totalMonetaryValueOfExcludedPayment: Double
+  let totalMonetaryValueOfExcludedPayments: Double
   
   let actualPage: Int
   let lastPage: Int
