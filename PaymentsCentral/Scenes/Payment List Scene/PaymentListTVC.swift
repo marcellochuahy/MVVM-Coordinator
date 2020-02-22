@@ -9,13 +9,13 @@
 import UIKit
 
 protocol PaymentListDelegate: class {
-  func pagarBoleto(indexPath: IndexPath)
+  func pay(monetaryValue: Double, forBeneficiary beneficiary: String)
 }
 
 class PaymentListTVC: UITableViewController {
   
   // MARK: - Properties
-  weak var delegate: PaymentListDelegate?
+  weak var coordinator: PaymentListDelegate?
   var tipoDePagamento: TypeOfPayment?
   var paymentsDataSource: [DayAndPayments]?
   
@@ -35,6 +35,24 @@ class PaymentListTVC: UITableViewController {
 
 }
 
+// MARK: - Constructor
+extension PaymentListTVC {
+  
+  public class func instantiate(coordinator: PaymentListDelegate?, title: String, paymentsDataSource: [DayAndPayments]?) -> PaymentListTVC {
+    
+    let viewController = PaymentListTVC()
+    
+    viewController.coordinator = coordinator
+    viewController.title = title
+    viewController.paymentsDataSource = paymentsDataSource
+    
+    return viewController
+    
+  }
+  
+}
+
+
 // MARK: - Table view data source
 extension PaymentListTVC {
   
@@ -47,65 +65,46 @@ extension PaymentListTVC {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
     guard let key = paymentsDataSource?[section]?.keys.first else { return 0 }
+    
     let payments = paymentsDataSource?[section]?[key] ?? []
+    
     return payments.count
+  
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PaymentListTVCell
     
-    guard let key = paymentsDataSource?[indexPath.section]?.keys.first else { return cell }
-    
-    let payments     = paymentsDataSource?[indexPath.section]?[key]
-    let beneficiary = payments?[indexPath.row].beneficiary
-    let monetaryValue  = payments?[indexPath.row].monetaryValue ?? 0
-    
+    guard let day      = paymentsDataSource?[indexPath.section]?.keys.first,
+          let payments = paymentsDataSource?[indexPath.section]?[day] else { return cell }
+
     cell.beneficiarioLabel.numberOfLines = 0
-    cell.beneficiarioLabel.text = beneficiary
-    cell.valorAPagarLabel.text  = "\(monetaryValue)"
-    cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+    cell.beneficiarioLabel.text          = payments[indexPath.row].beneficiary
+    cell.valorAPagarLabel.text           = "\(payments[indexPath.row].monetaryValue)"
+    cell.accessoryType                   = UITableViewCell.AccessoryType.disclosureIndicator
     
     return cell
+    
   }
   
+  /// a payment was selected to will be payed
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     tableView.deselectRow(at: indexPath, animated: false)
     
-    delegate?.pagarBoleto(indexPath: indexPath)
+    guard let day      = paymentsDataSource?[indexPath.section]?.keys.first,
+          let payments = paymentsDataSource?[indexPath.section]?[day] else { return }
+    
+    let beneficiary   = payments[indexPath.row].beneficiary
+    let monetaryValue = payments[indexPath.row].monetaryValue
+    
+    coordinator?.pay(monetaryValue: monetaryValue, forBeneficiary: beneficiary)
     
   }
   
 }
 
-// MARK: - Constructor
-extension PaymentListTVC {
-  
-  public class func instantiate(delegate: PaymentListDelegate?, title: String
-    
-    //,
-    //tipoDePagamento: TypeOfPayment?,
-    //paymentsDataSource: [DayAndPayments]?
-    
-    
-  )
-    -> PaymentListTVC
-  {
-    
-    let viewController = PaymentListTVC()
-    
-    viewController.delegate = delegate
-    viewController.title = title
-    
-    //viewController.coordinator = delegate
-    //viewController.title = "pagamentos \(tipoDePagamento?.rawValue ?? "")"
-    //viewController.paymentsDataSource = paymentsDataSource
-
-    return viewController
-    
-    
-  }
-}
 

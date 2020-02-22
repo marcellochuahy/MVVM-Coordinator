@@ -10,11 +10,13 @@ import UIKit
 
 class PaymentsCentralCoordinator: NSObject, Coordinator {
   
-  // MARK: - Properties
+  // MARK: - Coordinator Properties
   var childCoordinators = [Coordinator]()
   var navigationController: UINavigationController
-  var paymentsGroupedByType = PaymentsGroupedByType()
-  var summaryPayments = SummaryPayments(quantityOfDuePayments: 0,
+  
+    // MARK: - Instance Properties
+  private var paymentsGroupedByType = PaymentsGroupedByType()
+  private var summaryPayments = SummaryPayments(quantityOfDuePayments: 0,
                                         totalMonetaryValueOfDuePayments: 0,
                                         quantityOfOverduePayments: 0,
                                         totalMonetaryValueOfOverduePayments: 0,
@@ -22,12 +24,15 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
                                         totalMonetaryValueOfExcludedPayments: 0)
 
   // MARK: - Instance Properties - ViewControllers
-  /// Create customized versions of ListTableTVC
-  private lazy var paymentListTableViewControllers = [
-    PaymentListTVC.instantiate(delegate: self, title: TypeOfPayment.duePayment.rawValue),
-    PaymentListTVC.instantiate(delegate: self, title: TypeOfPayment.overduePayment.rawValue),
-    PaymentListTVC.instantiate(delegate: self, title: TypeOfPayment.excludedPayment.rawValue)
+  private lazy var beneficiary       = ""
+  private lazy var monetaryValue     = 0.00
+  private lazy var dashboardTVC      = DashboardTVC.instantiate(coordinator: self, summaryPayments: summaryPayments)
+  private lazy var paymentListTVCs   = [
+    PaymentListTVC.instantiate(coordinator: self, title: "pagamentos " + TypeOfPayment.duePayment.rawValue,      paymentsDataSource: paymentsGroupedByType.duePayment),
+    PaymentListTVC.instantiate(coordinator: self, title: "pagamentos " + TypeOfPayment.overduePayment.rawValue,  paymentsDataSource: paymentsGroupedByType.overduePayment),
+    PaymentListTVC.instantiate(coordinator: self, title: "pagamentos " + TypeOfPayment.excludedPayment.rawValue, paymentsDataSource: paymentsGroupedByType.excludedPayment)
   ]
+  private lazy var proofOfPaymentTVC = ProofOfPaymentTVC.instantiate(coordinator: self, beneficiary: beneficiary, monetaryValue: monetaryValue)
 
   // MARK: - Initializers
   init(navigationController: UINavigationController) {
@@ -39,19 +44,13 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
     setupNavigationController()
     loadData()
   }
+  
   func setupNavigationController() {
-    
-    let viewController = DashboardTVC.instantiate(coordinator: self, summaryPayments: summaryPayments)
-    
-    viewController.tabBarItem = UITabBarItem(title: "Central de Pagamentos",
-                                             image: UIImage(named: "walletOutline"),
-                                             selectedImage: UIImage(named: "walletFilled"))
-    
-    //navigationController.pushViewController(viewController, animated: false)
-    
-    navigationController.viewControllers = [viewController]
+    dashboardTVC.tabBarItem = UITabBarItem(title: "Central de Pagamentos", image: UIImage(named: "walletOutline"), selectedImage: UIImage(named: "walletFilled"))
+    navigationController.viewControllers = [dashboardTVC]
     navigationController.delegate = self
   }
+  
   func loadData() {
     
     guard let url = Bundle.main.url(forResource: "webServicePagamentos", withExtension: "json") else {
@@ -74,11 +73,11 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
             self.paymentsGroupedByType.overduePayment  = json.overduePayment
             self.paymentsGroupedByType.excludedPayment = json.excludedPayment
             
-            self.summaryPayments.quantityOfDuePayments               = json.quantityOfDuePayments
+            self.summaryPayments.quantityOfDuePayments                = json.quantityOfDuePayments
             self.summaryPayments.totalMonetaryValueOfDuePayments      = json.totalMonetaryValueOfDuePayments
-            self.summaryPayments.quantityOfOverduePayments           = json.quantityOfOverduePayments
+            self.summaryPayments.quantityOfOverduePayments            = json.quantityOfOverduePayments
             self.summaryPayments.totalMonetaryValueOfOverduePayments  = json.totalMonetaryValueOfOverduePayments
-            self.summaryPayments.quantityOfExcludedPayments          = json.quantityOfExcludedPayments
+            self.summaryPayments.quantityOfExcludedPayments           = json.quantityOfExcludedPayments
             self.summaryPayments.totalMonetaryValueOfExcludedPayments = json.totalMonetaryValueOfExcludedPayments
             
             
@@ -115,44 +114,32 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
 }
 
 extension PaymentsCentralCoordinator: DashboardDelegate {
-  
-  func startDuePaymentsNavigation() {
-    
-    let paymentsDataSource = paymentsGroupedByType.duePayment
-    print("A")
-    //    let child = CoordinatorTab_1_pagamentosAVencer(navigationController: navigationController,
-    //                                  paymentsDataSource: paymentsGroupedByType.duePayment)
-    //        childCoordinators.append(child)
-    //        child.parentCoordinator = self
-    //        child.start()
-  }
-  
-  func startOverduePaymentsNavigation() {
-    print("B")
-    //    let child = CoordinatorTab_1_pagamentosVencidos(navigationController: navigationController,
-    //                                  paymentsDataSource: paymentsGroupedByType.overduePayment)
-    //        childCoordinators.append(child)
-    //        child.parentCoordinator = self
-    //        child.start()
-  }
-  
-  func startExcludedPaymentsNavigation() {
-    print("C")
-    //    let child = CoordinatorTab_1_pagamentosExcluidos(navigationController: navigationController,
-    //                                  paymentsDataSource: paymentsGroupedByType.excludedPayment)
-    //        childCoordinators.append(child)
-    //        child.parentCoordinator = self
-    //        child.start()
-  }
-  
+  func startDuePaymentsNavigation()      { navigationController.pushViewController(paymentListTVCs[0], animated: true) }
+  func startOverduePaymentsNavigation()  { navigationController.pushViewController(paymentListTVCs[1], animated: true) }
+  func startExcludedPaymentsNavigation() { navigationController.pushViewController(paymentListTVCs[2], animated: true) }
 }
 
 extension PaymentsCentralCoordinator: PaymentListDelegate {
-  
-  func pagarBoleto(indexPath: IndexPath) {
-    print("PaymentListDelegate")
+  func pay(monetaryValue: Double, forBeneficiary beneficiary: String) {
+    
+    self.monetaryValue = monetaryValue
+    self.beneficiary   = beneficiary
+    
+
+    navigationController.pushViewController(proofOfPaymentTVC, animated: true)
+    
   }
+  
+  
+  
  
+}
+
+extension PaymentsCentralCoordinator: ProofOfPaymentDelegate {
+  func dismiss() {
+    print("dismiss")
+    // ... some code here ...
+  }
 }
 
 extension PaymentsCentralCoordinator: UINavigationControllerDelegate {

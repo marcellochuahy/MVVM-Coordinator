@@ -1,5 +1,5 @@
 //
-//  ComprovanteDePagamento.swift
+//  ProofOfPaymentTVC.swift
 //  Example2-MVC-ViewCode
 //
 //  Created by Marcello Chuahy on 16/02/20.
@@ -8,30 +8,25 @@
 
 import UIKit
 
-protocol ComprovanteDePagamentoDelegate: class {
+protocol ProofOfPaymentDelegate: class {
   func dismiss()
 }
-class ComprovanteDePagamento: UITableViewController {
+
+// ProofOfPaymentTVC
+class ProofOfPaymentTVC: UITableViewController {
   
   // MARK: - Properties
-  weak var coordinator: ComprovanteDePagamentoDelegate?
+  weak var coordinator: ProofOfPaymentDelegate?
   var monetaryValue: Double?
   var beneficiary: String?
   
   // MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    //setupLeftBarButton()
     setupTableView()
   }
   
   // MARK: - Methods
-  func setupLeftBarButton() {
-    
-    let leftBarButton  = UIBarButtonItem(title: "fechar", style: .done, target: self, action: #selector(dimissButtonWasPressed))
-    self.navigationItem.leftBarButtonItem = leftBarButton
-  }
-  
   func setupTableView() {
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 347
@@ -60,32 +55,25 @@ class ComprovanteDePagamento: UITableViewController {
     cell.beneficiarioLabel.numberOfLines = 0
     
     return cell
+    
   }
-  
   
 }
 
 // MARK: - Constructor
-extension ComprovanteDePagamento {
-  public class func instantiate(
-    delegate: ComprovanteDePagamentoDelegate?,
-    beneficiary: String,
-    monetaryValue: Double
-  )
-    -> ComprovanteDePagamento
-  {
-    let viewController = ComprovanteDePagamento()
+extension ProofOfPaymentTVC {
+  
+  public class func instantiate(coordinator: ProofOfPaymentDelegate?, beneficiary: String, monetaryValue: Double) -> ProofOfPaymentTVC {
+    
+    let viewController = ProofOfPaymentTVC()
+    
     viewController.title = "comprovante"
-    viewController.coordinator = delegate
+    viewController.coordinator = coordinator
     viewController.beneficiary = beneficiary
     viewController.monetaryValue = monetaryValue
     
     return viewController
     
   }
+  
 }
-//var monetaryValue: Double?
-//var beneficiary: String?
-//
-//
-//ComprovanteDePagamento.instantiate(withBeneficiario: beneficiary, andValorAPagar monetaryValue: monetaryValue)

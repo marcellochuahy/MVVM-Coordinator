@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F65E3DD23FFF49600C3F923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3DC23FFF49600C3F923 /* AppDelegate.swift */; };
 		5F65E3E224004AAC00C3F923 /* TypeOfPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3E124004AAC00C3F923 /* TypeOfPayment.swift */; };
-		5F65E3E5240058BF00C3F923 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3E4240058BF00C3F923 /* Router.swift */; };
-		5F65E3E924005D0C00C3F923 /* PaymentsCentralRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3E824005D0C00C3F923 /* PaymentsCentralRouter.swift */; };
 		5F65E3ED24014D3200C3F923 /* SummaryPayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3EC24014D3200C3F923 /* SummaryPayments.swift */; };
 		5F65E3F62401516F00C3F923 /* DayAndPayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3F52401516F00C3F923 /* DayAndPayments.swift */; };
 		5F66A792240153470065B9A7 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F66A791240153470065B9A7 /* Day.swift */; };
@@ -27,24 +25,18 @@
 		5F6F333223FC453A00C73418 /* DashboardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333123FC453A00C73418 /* DashboardTVCell.swift */; };
 		5F6F333623FC457800C73418 /* PaymentListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333523FC457800C73418 /* PaymentListTVC.swift */; };
 		5F6F333823FC45A400C73418 /* PaymentListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333723FC45A400C73418 /* PaymentListTVCell.swift */; };
-		5F6F333A23FC45C000C73418 /* ComprovanteDePagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333923FC45C000C73418 /* ComprovanteDePagamento.swift */; };
+		5F6F333A23FC45C000C73418 /* ProofOfPaymentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333923FC45C000C73418 /* ProofOfPaymentTVC.swift */; };
 		5F6F333C23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333B23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift */; };
 		5F6F333F23FC461E00C73418 /* OutroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333E23FC461E00C73418 /* OutroViewController.swift */; };
 		5F6F334123FC463900C73418 /* ViewModelQuantidadeDePagamentos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334023FC463900C73418 /* ViewModelQuantidadeDePagamentos.swift */; };
 		5F6F334323FC466500C73418 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334223FC466500C73418 /* ViewCodeProtocol.swift */; };
 		5F6F334623FC488900C73418 /* PaymentsCentralCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334523FC488900C73418 /* PaymentsCentralCoordinator.swift */; };
-		5F6F334823FC489600C73418 /* CoordinatorTab_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334723FC489600C73418 /* CoordinatorTab_2.swift */; };
 		5F6F334A23FC48A400C73418 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334923FC48A400C73418 /* Coordinator.swift */; };
-		5F6F334C23FC4F3300C73418 /* CoordinatorTab_1_pagamentosAVencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334B23FC4F3300C73418 /* CoordinatorTab_1_pagamentosAVencer.swift */; };
-		5F6F334E23FC4F4B00C73418 /* CoordinatorTab_1_pagamentosVencidos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334D23FC4F4B00C73418 /* CoordinatorTab_1_pagamentosVencidos.swift */; };
-		5F6F335023FC4F5600C73418 /* CoordinatorTab_1_pagamentosExcluidos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F334F23FC4F5600C73418 /* CoordinatorTab_1_pagamentosExcluidos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5F65E3DC23FFF49600C3F923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F65E3E124004AAC00C3F923 /* TypeOfPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfPayment.swift; sourceTree = "<group>"; };
-		5F65E3E4240058BF00C3F923 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		5F65E3E824005D0C00C3F923 /* PaymentsCentralRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsCentralRouter.swift; sourceTree = "<group>"; };
 		5F65E3EC24014D3200C3F923 /* SummaryPayments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPayments.swift; sourceTree = "<group>"; };
 		5F65E3F52401516F00C3F923 /* DayAndPayments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayAndPayments.swift; sourceTree = "<group>"; };
 		5F66A791240153470065B9A7 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -63,17 +55,13 @@
 		5F6F333123FC453A00C73418 /* DashboardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTVCell.swift; sourceTree = "<group>"; };
 		5F6F333523FC457800C73418 /* PaymentListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListTVC.swift; sourceTree = "<group>"; };
 		5F6F333723FC45A400C73418 /* PaymentListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentListTVCell.swift; sourceTree = "<group>"; };
-		5F6F333923FC45C000C73418 /* ComprovanteDePagamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprovanteDePagamento.swift; sourceTree = "<group>"; };
+		5F6F333923FC45C000C73418 /* ProofOfPaymentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProofOfPaymentTVC.swift; sourceTree = "<group>"; };
 		5F6F333B23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelulaDoComprovanteDePagamento.swift; sourceTree = "<group>"; };
 		5F6F333E23FC461E00C73418 /* OutroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutroViewController.swift; sourceTree = "<group>"; };
 		5F6F334023FC463900C73418 /* ViewModelQuantidadeDePagamentos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelQuantidadeDePagamentos.swift; sourceTree = "<group>"; };
 		5F6F334223FC466500C73418 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		5F6F334523FC488900C73418 /* PaymentsCentralCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsCentralCoordinator.swift; sourceTree = "<group>"; };
-		5F6F334723FC489600C73418 /* CoordinatorTab_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoordinatorTab_2.swift; path = ../CoordinatorTab_2.swift; sourceTree = "<group>"; };
 		5F6F334923FC48A400C73418 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		5F6F334B23FC4F3300C73418 /* CoordinatorTab_1_pagamentosAVencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoordinatorTab_1_pagamentosAVencer.swift; path = ../CoordinatorTab_1_pagamentosAVencer.swift; sourceTree = "<group>"; };
-		5F6F334D23FC4F4B00C73418 /* CoordinatorTab_1_pagamentosVencidos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoordinatorTab_1_pagamentosVencidos.swift; path = ../CoordinatorTab_1_pagamentosVencidos.swift; sourceTree = "<group>"; };
-		5F6F334F23FC4F5600C73418 /* CoordinatorTab_1_pagamentosExcluidos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoordinatorTab_1_pagamentosExcluidos.swift; path = ../CoordinatorTab_1_pagamentosExcluidos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,15 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F0232D1240166C4000986AF /* DEPRECATED */ = {
+		5F533D3C240199B4009B253D /* Dashboard Scene */ = {
 			isa = PBXGroup;
 			children = (
-				5F6F334B23FC4F3300C73418 /* CoordinatorTab_1_pagamentosAVencer.swift */,
-				5F6F334D23FC4F4B00C73418 /* CoordinatorTab_1_pagamentosVencidos.swift */,
-				5F6F334F23FC4F5600C73418 /* CoordinatorTab_1_pagamentosExcluidos.swift */,
-				5F6F334723FC489600C73418 /* CoordinatorTab_2.swift */,
+				5F6F332F23FC451B00C73418 /* DashboardTVC.swift */,
+				5F6F333123FC453A00C73418 /* DashboardTVCell.swift */,
 			);
-			path = DEPRECATED;
+			path = "Dashboard Scene";
+			sourceTree = "<group>";
+		};
+		5F533D3D240199C2009B253D /* Payment List Scene */ = {
+			isa = PBXGroup;
+			children = (
+				5F6F333523FC457800C73418 /* PaymentListTVC.swift */,
+				5F6F333723FC45A400C73418 /* PaymentListTVCell.swift */,
+			);
+			path = "Payment List Scene";
 			sourceTree = "<group>";
 		};
 		5F65E3DB23FFF46B00C3F923 /* AppDelegate */ = {
@@ -113,15 +108,6 @@
 				5F6F32FA23FC3B0B00C73418 /* Info.plist */,
 			);
 			path = "Supporting files";
-			sourceTree = "<group>";
-		};
-		5F65E3E32400589500C3F923 /* DEPRECATED Routers */ = {
-			isa = PBXGroup;
-			children = (
-				5F65E3E4240058BF00C3F923 /* Router.swift */,
-				5F65E3E824005D0C00C3F923 /* PaymentsCentralRouter.swift */,
-			);
-			path = "DEPRECATED Routers";
 			sourceTree = "<group>";
 		};
 		5F65E3EE24014D6300C3F923 /* Type Alias */ = {
@@ -158,7 +144,6 @@
 				5F6F330123FC3B9400C73418 /* Models */,
 				5F6F330223FC3BA300C73418 /* Network */,
 				5F6F334423FC486D00C73418 /* Coordinators */,
-				5F65E3E32400589500C3F923 /* DEPRECATED Routers */,
 				5F6F330323FC3BAF00C73418 /* Scenes */,
 				5F6F330523FC3BCE00C73418 /* View-Model */,
 				5F65E3E023FFF92800C3F923 /* Supporting files */,
@@ -192,12 +177,9 @@
 			children = (
 				5F6F334223FC466500C73418 /* ViewCodeProtocol.swift */,
 				5F6F332D23FC450300C73418 /* TabBarController.swift */,
-				5F6F332F23FC451B00C73418 /* DashboardTVC.swift */,
-				5F6F333123FC453A00C73418 /* DashboardTVCell.swift */,
-				5F6F333523FC457800C73418 /* PaymentListTVC.swift */,
-				5F6F333723FC45A400C73418 /* PaymentListTVCell.swift */,
-				5F6F333923FC45C000C73418 /* ComprovanteDePagamento.swift */,
-				5F6F333B23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift */,
+				5F533D3C240199B4009B253D /* Dashboard Scene */,
+				5F533D3D240199C2009B253D /* Payment List Scene */,
+				5F7224572401AA3200AD90B9 /* ProofOfPayment */,
 				5F6F332B23FC44D000C73418 /* Tab 2 */,
 			);
 			path = Scenes;
@@ -233,9 +215,17 @@
 			children = (
 				5F6F334923FC48A400C73418 /* Coordinator.swift */,
 				5F6F334523FC488900C73418 /* PaymentsCentralCoordinator.swift */,
-				5F0232D1240166C4000986AF /* DEPRECATED */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		5F7224572401AA3200AD90B9 /* ProofOfPayment */ = {
+			isa = PBXGroup;
+			children = (
+				5F6F333923FC45C000C73418 /* ProofOfPaymentTVC.swift */,
+				5F6F333B23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift */,
+			);
+			path = ProofOfPayment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,22 +302,16 @@
 			files = (
 				5F65E3DD23FFF49600C3F923 /* AppDelegate.swift in Sources */,
 				5F6F334323FC466500C73418 /* ViewCodeProtocol.swift in Sources */,
-				5F65E3E5240058BF00C3F923 /* Router.swift in Sources */,
 				5F6F332723FC440F00C73418 /* WebServiceDecoder.swift in Sources */,
 				5F65E3E224004AAC00C3F923 /* TypeOfPayment.swift in Sources */,
 				5F6F333623FC457800C73418 /* PaymentListTVC.swift in Sources */,
 				5F6F332E23FC450300C73418 /* TabBarController.swift in Sources */,
-				5F6F334C23FC4F3300C73418 /* CoordinatorTab_1_pagamentosAVencer.swift in Sources */,
 				5F6F334A23FC48A400C73418 /* Coordinator.swift in Sources */,
 				5F66A792240153470065B9A7 /* Day.swift in Sources */,
 				5F6F332123FC43DA00C73418 /* PaymentsGroupedByType.swift in Sources */,
 				5F6F333823FC45A400C73418 /* PaymentListTVCell.swift in Sources */,
-				5F6F334823FC489600C73418 /* CoordinatorTab_2.swift in Sources */,
-				5F6F335023FC4F5600C73418 /* CoordinatorTab_1_pagamentosExcluidos.swift in Sources */,
-				5F6F333A23FC45C000C73418 /* ComprovanteDePagamento.swift in Sources */,
+				5F6F333A23FC45C000C73418 /* ProofOfPaymentTVC.swift in Sources */,
 				5F6F333023FC451B00C73418 /* DashboardTVC.swift in Sources */,
-				5F65E3E924005D0C00C3F923 /* PaymentsCentralRouter.swift in Sources */,
-				5F6F334E23FC4F4B00C73418 /* CoordinatorTab_1_pagamentosVencidos.swift in Sources */,
 				5F6F334623FC488900C73418 /* PaymentsCentralCoordinator.swift in Sources */,
 				5F65E3F62401516F00C3F923 /* DayAndPayments.swift in Sources */,
 				5F6F333C23FC45D700C73418 /* CelulaDoComprovanteDePagamento.swift in Sources */,
