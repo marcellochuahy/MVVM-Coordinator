@@ -21,8 +21,8 @@ struct WebServiceDecoder: Decodable {
   let quantityOfExcludedPayments: Int
   let totalMonetaryValueOfExcludedPayment: Double
   
-  let paginaAtual: Int
-  let ultimaPagina: Int
+  let actualPage: Int
+  let lastPage: Int
   
   let statusCode: Int
   

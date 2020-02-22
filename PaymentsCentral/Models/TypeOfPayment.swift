@@ -7,7 +7,9 @@
 //
 
 enum TypeOfPayment: String {
-  case duePayment   = "a vencer"
+  
+  case duePayment      = "a vencer"
   case overduePayment  = "vencidos"
   case excludedPayment = "excluídos"
+  
 }

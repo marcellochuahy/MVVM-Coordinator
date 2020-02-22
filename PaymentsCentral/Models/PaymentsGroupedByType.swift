@@ -12,13 +12,4 @@ struct PaymentsGroupedByType {
   var overduePayment:  [DayAndPayments] = []
   var excludedPayment: [DayAndPayments] = []
   
-//  var pagamentosAVencerQtd: Int?
-//  var pagamentosAVencerTotalAPagar: Double?
-//  
-//  var pagamentosVencidosQtd: Int?
-//  var pagamentosVencidosTotalAPagar: Double?
-//  
-//  var pagamentosExcluidosQtd: Int?
-//  var pagamentosExcluidosTotalAPagar: Double?
-  
 }
