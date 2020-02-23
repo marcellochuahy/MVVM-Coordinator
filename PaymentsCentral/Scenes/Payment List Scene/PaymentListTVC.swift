@@ -27,8 +27,10 @@ class PaymentListTVC: UITableViewController {
   
   // MARK: - Methods
   func setupTableView() {
-    tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 80
+    
+    /// ⚠️ uncomment to enable self sizing cell
+    // tableView.rowHeight = UITableView.automaticDimension
+    // tableView.estimatedRowHeight = 80
     tableView.backgroundColor = UIColor.CustomStyle.white
     tableView.register(PaymentListTVCell.self, forCellReuseIdentifier: "cell")
   }
@@ -81,10 +83,12 @@ extension PaymentListTVC {
     guard let day      = paymentsDataSource?[indexPath.section]?.keys.first,
           let payments = paymentsDataSource?[indexPath.section]?[day] else { return cell }
 
-    cell.beneficiaryLabel.numberOfLines = 0
+    /// ⚠️ uncomment to enable self sizing cell
+    // cell.beneficiaryLabel.adjustsFontForContentSizeCategory = true
+    // cell.beneficiaryLabel.numberOfLines = 0
     cell.beneficiaryLabel.text          = payments[indexPath.row].beneficiary
-    cell.monetaryValueLabel.text           = "\(payments[indexPath.row].monetaryValue)"
-    cell.accessoryType                   = UITableViewCell.AccessoryType.disclosureIndicator
+    cell.monetaryValueLabel.text        = "\(payments[indexPath.row].monetaryValue)"
+    cell.accessoryType                  = UITableViewCell.AccessoryType.disclosureIndicator
     
     return cell
     

@@ -60,8 +60,6 @@ extension PaymentListTVCell: ViewCodeProtocol {
     
     beneficiaryLabel.font = UIFont.CustomStyle.helveticaNeueBold_14
     beneficiaryLabel.textColor = UIColor.CustomStyle.darkGray
-    beneficiaryLabel.numberOfLines = 0
-    beneficiaryLabel.adjustsFontForContentSizeCategory = true
     
     monetaryValueLabel.font = UIFont.CustomStyle.helveticaNeue_20
     monetaryValueLabel.textColor = UIColor.CustomStyle.orange

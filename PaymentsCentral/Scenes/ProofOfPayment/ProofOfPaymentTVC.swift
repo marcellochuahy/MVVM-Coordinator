@@ -32,7 +32,7 @@ class ProofOfPaymentTVC: UITableViewController {
     /// ⚠️ uncomment to enable self sizing cell
     // tableView.rowHeight = UITableView.automaticDimension
     // tableView.estimatedRowHeight = 347
-    
+    tableView.separatorStyle = .none
     tableView.register(ProofOfPaymentTVCell.self, forCellReuseIdentifier: "cell")
     
   }
