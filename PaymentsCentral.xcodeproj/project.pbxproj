@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F3C005A24027E0100193EF4 /* webServicePagamentos1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F3C005924027E0100193EF4 /* webServicePagamentos1.json */; };
 		5F65E3DD23FFF49600C3F923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3DC23FFF49600C3F923 /* AppDelegate.swift */; };
 		5F65E3E224004AAC00C3F923 /* TypeOfPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3E124004AAC00C3F923 /* TypeOfPayment.swift */; };
 		5F65E3ED24014D3200C3F923 /* SummaryPayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3EC24014D3200C3F923 /* SummaryPayments.swift */; };
@@ -19,7 +20,7 @@
 		5F6F331F23FC43CD00C73418 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F331E23FC43CD00C73418 /* Payment.swift */; };
 		5F6F332123FC43DA00C73418 /* PaymentsGroupedByType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F332023FC43DA00C73418 /* PaymentsGroupedByType.swift */; };
 		5F6F332723FC440F00C73418 /* WebServiceDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F332623FC440F00C73418 /* WebServiceDecoder.swift */; };
-		5F6F332923FC442B00C73418 /* webServicePagamentos.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F6F332823FC442B00C73418 /* webServicePagamentos.json */; };
+		5F6F332923FC442B00C73418 /* webServicePagamentos2.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F6F332823FC442B00C73418 /* webServicePagamentos2.json */; };
 		5F6F332E23FC450300C73418 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F332D23FC450300C73418 /* TabBarController.swift */; };
 		5F6F333023FC451B00C73418 /* DashboardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F332F23FC451B00C73418 /* DashboardTVC.swift */; };
 		5F6F333223FC453A00C73418 /* DashboardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6F333123FC453A00C73418 /* DashboardTVCell.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F3C005924027E0100193EF4 /* webServicePagamentos1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = webServicePagamentos1.json; sourceTree = "<group>"; };
 		5F65E3DC23FFF49600C3F923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F65E3E124004AAC00C3F923 /* TypeOfPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfPayment.swift; sourceTree = "<group>"; };
 		5F65E3EC24014D3200C3F923 /* SummaryPayments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPayments.swift; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		5F6F331E23FC43CD00C73418 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		5F6F332023FC43DA00C73418 /* PaymentsGroupedByType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsGroupedByType.swift; sourceTree = "<group>"; };
 		5F6F332623FC440F00C73418 /* WebServiceDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceDecoder.swift; sourceTree = "<group>"; };
-		5F6F332823FC442B00C73418 /* webServicePagamentos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = webServicePagamentos.json; sourceTree = "<group>"; };
+		5F6F332823FC442B00C73418 /* webServicePagamentos2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = webServicePagamentos2.json; sourceTree = "<group>"; };
 		5F6F332D23FC450300C73418 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5F6F332F23FC451B00C73418 /* DashboardTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTVC.swift; sourceTree = "<group>"; };
 		5F6F333123FC453A00C73418 /* DashboardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTVCell.swift; sourceTree = "<group>"; };
@@ -167,7 +169,8 @@
 		5F6F330223FC3BA300C73418 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				5F6F332823FC442B00C73418 /* webServicePagamentos.json */,
+				5F3C005924027E0100193EF4 /* webServicePagamentos1.json */,
+				5F6F332823FC442B00C73418 /* webServicePagamentos2.json */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -288,7 +291,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F6F32F923FC3B0B00C73418 /* LaunchScreen.storyboard in Resources */,
-				5F6F332923FC442B00C73418 /* webServicePagamentos.json in Resources */,
+				5F6F332923FC442B00C73418 /* webServicePagamentos2.json in Resources */,
+				5F3C005A24027E0100193EF4 /* webServicePagamentos1.json in Resources */,
 				5F6F32F623FC3B0B00C73418 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

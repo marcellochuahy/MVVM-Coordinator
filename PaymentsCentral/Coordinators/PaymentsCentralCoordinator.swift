@@ -65,7 +65,7 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
   
   func loadData() {
     
-    guard let url = Bundle.main.url(forResource: "webServicePagamentos", withExtension: "json") else {
+    guard let url = Bundle.main.url(forResource: "webServicePagamentos1", withExtension: "json") else {
       return
     }
     
@@ -85,11 +85,11 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
             self.paymentsGroupedByType.overduePayment  = json.overduePayment
             self.paymentsGroupedByType.excludedPayment = json.excludedPayment
             
-            self.summaryPayments.numberOfDuePayments                = json.numberOfDuePayments
+            self.summaryPayments.numberOfDuePayments                  = json.numberOfDuePayments
             self.summaryPayments.totalMonetaryValueOfDuePayments      = json.totalMonetaryValueOfDuePayments
-            self.summaryPayments.numberOfOverduePayments            = json.numberOfOverduePayments
+            self.summaryPayments.numberOfOverduePayments              = json.numberOfOverduePayments
             self.summaryPayments.totalMonetaryValueOfOverduePayments  = json.totalMonetaryValueOfOverduePayments
-            self.summaryPayments.numberOfExcludedPayments           = json.numberOfExcludedPayments
+            self.summaryPayments.numberOfExcludedPayments             = json.numberOfExcludedPayments
             self.summaryPayments.totalMonetaryValueOfExcludedPayments = json.totalMonetaryValueOfExcludedPayments
             
             
