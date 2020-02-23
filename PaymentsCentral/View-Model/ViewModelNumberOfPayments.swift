@@ -7,11 +7,11 @@
 //
 
 import UIKit
-// TODO
+
 class ViewModelNumberOfPayments {
   
   // MARK: Properties
-  let TypeOfPayment: TypeOfPayment
+  private let TypeOfPayment: TypeOfPayment
   let numberOfPayments: Int
   let totalMonetaryValue: Double
   

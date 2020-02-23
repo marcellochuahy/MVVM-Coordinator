@@ -7,16 +7,17 @@
 //
 
 import UIKit
-// TODO
+
 class ProofOfPaymentTVCell: UITableViewCell {
   
   // MARK: - Properties
   
   lazy var boletoBancarioLabel: UILabel      = { return UILabel(frame: .zero) }()
-  lazy var monetaryValueLabel: UILabel       = { return UILabel(frame: .zero) }()
-  lazy var divider: UIView                   = { return UIView(frame: .zero) }()
   lazy var dadosDoBeneficiarioLabel: UILabel = { return UILabel(frame: .zero) }()
   lazy var nomeLabel: UILabel                = { return UILabel(frame: .zero) }()
+  
+  lazy var monetaryValueLabel: UILabel       = { return UILabel(frame: .zero) }()
+  lazy var divider: UIView                   = { return UIView(frame: .zero) }()
   lazy var beneficiaryLabel: UILabel         = { return UILabel(frame: .zero) }()
   
   // MARK: - Initialization
@@ -112,17 +113,7 @@ extension ProofOfPaymentTVCell: ViewCodeProtocol {
     boletoBancarioLabel.numberOfLines = 2
     
     divider.backgroundColor = UIColor.CustomStyle.lightGray
-    
-    // TODO
-    //setSelfSizingCellsWithDynamicType()
-    
+
   }
-  
-  // TODO
-  //  func setSelfSizingCellsWithDynamicType() {
-  //    beneficiaryLabel.numberOfLines = 0
-  //    beneficiaryLabel.adjustsFontForContentSizeCategory = true
-  //  }
-  
-  
+
 }
