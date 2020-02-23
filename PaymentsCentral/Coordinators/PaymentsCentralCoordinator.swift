@@ -169,12 +169,12 @@ extension PaymentsCentralCoordinator: UINavigationControllerDelegate {
     if navigationController.viewControllers.contains(fromViewController) { return }
     
     if let paymentList = fromViewController as? PaymentListTVC {
-      print("finish child coordinator of PaymentListTVC")
+      print("trying to finish child coordinator of PaymentListTVC if it exists")
       childDidFinish(paymentList.coordinator as? Coordinator)
     }
     
     if let proofOfPayment = fromViewController as? ProofOfPaymentTVC {
-      print("finish child coordinator of ProofOfPaymentTVC")
+      print("trying to finish child coordinator of ProofOfPaymentTVC if it exists")
       childDidFinish(proofOfPayment.coordinator as? Coordinator)
     }
 
