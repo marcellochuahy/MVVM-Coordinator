@@ -88,13 +88,13 @@ extension DashboardTVC {
         let totalMonetaryValue = summaryPayments.totalMonetaryValueOfDuePayments ?? 0
         
         /// ⚠️  Before MVVM (comment to enable MVVM)
-        cell.numberOfPayments.text   = String(numberOfPayments)
-        cell.monetaryValueLabel.text = String(totalMonetaryValue)
+        // cell.numberOfPayments.text   = String(numberOfPayments)
+        // cell.monetaryValueLabel.text = String(totalMonetaryValue)
         
         /// ⚠️ After MVVM (uncomment to enable MVVM)
-        // let viewModel = ViewModelNumberOfPayments(TypeOfPayment: .duePayment, numberOfPayments: numberOfPayments, totalMonetaryValue: totalMonetaryValue)
-        // cell.numberOfPayments.attributedText   = viewModel.quantidadeAttributedString
-        // cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
+         let viewModel = ViewModelNumberOfPayments(TypeOfPayment: .duePayment, numberOfPayments: numberOfPayments, totalMonetaryValue: totalMonetaryValue)
+         cell.numberOfPayments.attributedText   = viewModel.quantidadeAttributedString
+         cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
         
         cell.leftBarView.backgroundColor = UIColor.CustomStyle.yellow
         
@@ -106,13 +106,13 @@ extension DashboardTVC {
         let totalMonetaryValue = summaryPayments.totalMonetaryValueOfOverduePayments ?? 0
 
         /// ⚠️  Before MVVM (comment to enable MVVM)
-        cell.numberOfPayments.text   = String(numberOfPayments)
-        cell.monetaryValueLabel.text = String(totalMonetaryValue)
+        // cell.numberOfPayments.text   = String(numberOfPayments)
+        // cell.monetaryValueLabel.text = String(totalMonetaryValue)
         
         /// ⚠️ After MVVM (uncomment to enable MVVM)
-        // let viewModel = ViewModelNumberOfPayments(TypeOfPayment: .overduePayment, numberOfPayments: numberOfPayments, totalMonetaryValue: totalMonetaryValue)
-        // cell.numberOfPayments.attributedText   = viewModel.quantidadeAttributedString
-        // cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
+         let viewModel = ViewModelNumberOfPayments(TypeOfPayment: .overduePayment, numberOfPayments: numberOfPayments, totalMonetaryValue: totalMonetaryValue)
+         cell.numberOfPayments.attributedText   = viewModel.quantidadeAttributedString
+         cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
         
         cell.leftBarView.backgroundColor = UIColor.CustomStyle.purple
         
@@ -124,13 +124,13 @@ extension DashboardTVC {
         let totalMonetaryValue = summaryPayments.totalMonetaryValueOfExcludedPayments ?? 0
         
         /// ⚠️  Before MVVM (comment to enable MVVM)
-        cell.numberOfPayments.text   = String(numberOfPayments)
-        cell.monetaryValueLabel.text = String(totalMonetaryValue)
+        // cell.numberOfPayments.text   = String(numberOfPayments)
+        // cell.monetaryValueLabel.text = String(totalMonetaryValue)
         
         /// ⚠️ After MVVM (uncomment to enable MVVM)
-        // let viewModel = ViewModelNumberOfPayments(TypeOfPayment: .excludedPayment, numberOfPayments: numberOfPayments, totalMonetaryValue: totalMonetaryValue)
-        // cell.numberOfPayments.attributedText   = viewModel.quantidadeAttributedString
-        // cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
+        let viewModel = ViewModelNumberOfPayments(TypeOfPayment: .excludedPayment, numberOfPayments: numberOfPayments, totalMonetaryValue: totalMonetaryValue)
+        cell.numberOfPayments.attributedText   = viewModel.quantidadeAttributedString
+        cell.monetaryValueLabel.attributedText = viewModel.valorAttributedString
         
         cell.leftBarView.backgroundColor = UIColor.CustomStyle.darkRed
         
