@@ -25,8 +25,7 @@ extension AppDelegate {
   func setupWindow() {
     
     let window = UIWindow(frame: UIScreen.main.bounds)
-    let tabBarController = TabBarController()
-    window.rootViewController = tabBarController
+    window.rootViewController = TabBarController()
     
     self.window = window
     window.makeKeyAndVisible()

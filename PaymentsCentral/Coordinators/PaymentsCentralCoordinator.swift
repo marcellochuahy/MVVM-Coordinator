@@ -24,15 +24,19 @@ class PaymentsCentralCoordinator: NSObject, Coordinator {
                                         totalMonetaryValueOfExcludedPayments: 0)
 
   // MARK: - Instance Properties - ViewControllers
-  // ==============================================================================================================================================
-  private lazy var dashboardTVC      = DashboardTVC.instantiate(coordinator: self, summaryPayments: summaryPayments)
-  private lazy var paymentListTVCs   = [
-    PaymentListTVC.instantiate(coordinator: self, title: "pagamentos " + TypeOfPayment.duePayment.rawValue,      paymentsDataSource: paymentsGroupedByType.duePayment),
-    PaymentListTVC.instantiate(coordinator: self, title: "pagamentos " + TypeOfPayment.overduePayment.rawValue,  paymentsDataSource: paymentsGroupedByType.overduePayment),
-    PaymentListTVC.instantiate(coordinator: self, title: "pagamentos " + TypeOfPayment.excludedPayment.rawValue, paymentsDataSource: paymentsGroupedByType.excludedPayment)
+  private lazy var dashboardTVC = DashboardTVC.instantiate(coordinator: self, summaryPayments: summaryPayments)
+  private lazy var paymentListTVCs = [
+    PaymentListTVC.instantiate(coordinator: self,
+                               title: "pagamentos " + TypeOfPayment.duePayment.rawValue,
+                               paymentsDataSource: paymentsGroupedByType.duePayment),
+    PaymentListTVC.instantiate(coordinator: self,
+                               title: "pagamentos " + TypeOfPayment.overduePayment.rawValue,
+                               paymentsDataSource: paymentsGroupedByType.overduePayment),
+    PaymentListTVC.instantiate(coordinator: self,
+                               title: "pagamentos " + TypeOfPayment.excludedPayment.rawValue,
+                               paymentsDataSource: paymentsGroupedByType.excludedPayment)
   ]
   private lazy var proofOfPaymentTVC = ProofOfPaymentTVC()
-  // ==============================================================================================================================================
 
   // MARK: - Initializers
   init(navigationController: UINavigationController) {
@@ -157,6 +161,22 @@ extension PaymentsCentralCoordinator: ProofOfPaymentDelegate {
     print("dismiss")
     // ... some code here ...
   }
+}
+
+extension PaymentsCentralCoordinator: ButtonsDelegate {
+  func startButtonANavigation() {
+    print("startButtonANavigation")
+  }
+  
+  func startButtonBNavigation() {
+    print("startButtonBNavigation")
+  }
+  
+  func startButtonCNavigation() {
+    print("startButtonCNavigation")
+  }
+  
+  
 }
 
 extension PaymentsCentralCoordinator: UINavigationControllerDelegate {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5F3C005A24027E0100193EF4 /* webServicePagamentos1.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F3C005924027E0100193EF4 /* webServicePagamentos1.json */; };
+		5F3C005C2402A0E400193EF4 /* Coordinator2Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3C005B2402A0E400193EF4 /* Coordinator2Example.swift */; };
+		5F3C005F2402A93000193EF4 /* ButtonsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3C005E2402A93000193EF4 /* ButtonsTVCell.swift */; };
 		5F65E3DD23FFF49600C3F923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3DC23FFF49600C3F923 /* AppDelegate.swift */; };
 		5F65E3E224004AAC00C3F923 /* TypeOfPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3E124004AAC00C3F923 /* TypeOfPayment.swift */; };
 		5F65E3ED24014D3200C3F923 /* SummaryPayments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F65E3EC24014D3200C3F923 /* SummaryPayments.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		5F3C005924027E0100193EF4 /* webServicePagamentos1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = webServicePagamentos1.json; sourceTree = "<group>"; };
+		5F3C005B2402A0E400193EF4 /* Coordinator2Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator2Example.swift; sourceTree = "<group>"; };
+		5F3C005E2402A93000193EF4 /* ButtonsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsTVCell.swift; sourceTree = "<group>"; };
 		5F65E3DC23FFF49600C3F923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F65E3E124004AAC00C3F923 /* TypeOfPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfPayment.swift; sourceTree = "<group>"; };
 		5F65E3EC24014D3200C3F923 /* SummaryPayments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPayments.swift; sourceTree = "<group>"; };
@@ -77,11 +81,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F3C005D2402A15400193EF4 /* Tab 1 */ = {
+			isa = PBXGroup;
+			children = (
+				5F533D3C240199B4009B253D /* Dashboard Scene */,
+				5F533D3D240199C2009B253D /* Payment List Scene */,
+				5F7224572401AA3200AD90B9 /* ProofOfPayment */,
+			);
+			path = "Tab 1";
+			sourceTree = "<group>";
+		};
 		5F533D3C240199B4009B253D /* Dashboard Scene */ = {
 			isa = PBXGroup;
 			children = (
 				5F6F332F23FC451B00C73418 /* DashboardTVC.swift */,
 				5F6F333123FC453A00C73418 /* DashboardTVCell.swift */,
+				5F3C005E2402A93000193EF4 /* ButtonsTVCell.swift */,
 			);
 			path = "Dashboard Scene";
 			sourceTree = "<group>";
@@ -180,9 +195,7 @@
 			children = (
 				5F6F334223FC466500C73418 /* ViewCodeProtocol.swift */,
 				5F6F332D23FC450300C73418 /* TabBarController.swift */,
-				5F533D3C240199B4009B253D /* Dashboard Scene */,
-				5F533D3D240199C2009B253D /* Payment List Scene */,
-				5F7224572401AA3200AD90B9 /* ProofOfPayment */,
+				5F3C005D2402A15400193EF4 /* Tab 1 */,
 				5F6F332B23FC44D000C73418 /* Tab 2 */,
 			);
 			path = Scenes;
@@ -218,6 +231,7 @@
 			children = (
 				5F6F334923FC48A400C73418 /* Coordinator.swift */,
 				5F6F334523FC488900C73418 /* PaymentsCentralCoordinator.swift */,
+				5F3C005B2402A0E400193EF4 /* Coordinator2Example.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -311,6 +325,8 @@
 				5F6F333623FC457800C73418 /* PaymentListTVC.swift in Sources */,
 				5F6F332E23FC450300C73418 /* TabBarController.swift in Sources */,
 				5F6F334A23FC48A400C73418 /* Coordinator.swift in Sources */,
+				5F3C005F2402A93000193EF4 /* ButtonsTVCell.swift in Sources */,
+				5F3C005C2402A0E400193EF4 /* Coordinator2Example.swift in Sources */,
 				5F66A792240153470065B9A7 /* Day.swift in Sources */,
 				5F6F332123FC43DA00C73418 /* PaymentsGroupedByType.swift in Sources */,
 				5F6F333823FC45A400C73418 /* PaymentListTVCell.swift in Sources */,
