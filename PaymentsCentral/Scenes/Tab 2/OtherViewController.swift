@@ -8,7 +8,7 @@
 
 import UIKit
 // TODO
-class OutroViewController: UIViewController {
+class OtherViewController: UIViewController {
   
   lazy var label: UILabel = { return UILabel(frame: .zero) }()
   
@@ -24,7 +24,7 @@ class OutroViewController: UIViewController {
   
 }
 
-extension OutroViewController: ViewCodeProtocol {
+extension OtherViewController: ViewCodeProtocol {
   
   private func setupView() {
     view = UIView(frame: .zero)
