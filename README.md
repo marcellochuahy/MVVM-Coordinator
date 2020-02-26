@@ -7,11 +7,10 @@ Este projeto foi desenvolvido em View Code (portanto sem utilização de Storybo
 
 ## Table of Contents
 * [Style Guide](#style-guide)
-Style Guide
-View Code
-Model View View-Model
-Coordinator
-Self Sizing Cells
+* [View Code](#view-code)
+* [Model View View-Model](#model-view-viewmodel)
+* [Coordinator](#coordinator)
+* [Self Sizing Cells](#self-sizing-cells)
 
 ## Style Guide
 
