@@ -1,7 +1,7 @@
 # MVVM-Coordinator
 
 ###### iOS Deployment Target: 12.4  
-Swift Language Version: 4.2
+###### Swift Language Version: 4.2
 
 Este projeto foi desenvolvido em View Code (portanto sem utilização de Storyboards) com o objetivo de demonstrar a utilização dos Design Patterns MVVM (Model View View-Model) e Coordinator.
 
